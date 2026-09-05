@@ -5,7 +5,8 @@ flats = [
             "commute": 10,
             "size": 588,
             "bills_included": True,
-            "furnished": True
+            "furnished": True,
+            "bedrooms": 2
         },
         {
             "name": "Flat B",
@@ -13,7 +14,8 @@ flats = [
             "commute": 30,
             "size": 420,
             "bills_included": False,
-            "furnished": False
+            "furnished": False,
+            "bedrooms": 1
 
         },
         {
@@ -22,7 +24,8 @@ flats = [
             "commute": 12,
             "size": 620,
             "bills_included": False,
-            "furnished": True
+            "furnished": True,
+            "bedrooms": 3
         },
         {
             "name": "Flat D",
@@ -30,7 +33,8 @@ flats = [
             "commute": 20,
             "size": 588,
             "bills_included": False,
-            "furnished": True
+            "furnished": True,
+            "bedrooms": 2
         },
         {
             "name": "Flat E",
@@ -38,7 +42,8 @@ flats = [
             "commute": 40,
             "size": 500,
             "bills_included": True,
-            "furnished": True
+            "furnished": True,
+            "bedrooms": 2
         }
     ]
 budget_min = 300
@@ -46,4 +51,5 @@ budget_max = 400
 commute_max = 30
 prefer_bills_included = False
 prefer_furnished = True
+min_bedrooms = 2
 weights = {"price": 4, "commute": 5, "size": 2, "bills_included": 1, "furnished": 4}
