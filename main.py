@@ -10,10 +10,13 @@ def main():
     normalised_weights = normalise_weights(weights)
 
     for flat in filtered_flats:
-        scores, total_score = score_flat(flat, budget_min, budget_max, commute_max, prefer_bills_included, prefer_furnished, min_val, max_val, normalised_weights)
+        breakdown, total_score = score_flat(flat, budget_min, budget_max, commute_max, prefer_bills_included, prefer_furnished, min_val, max_val, normalised_weights)
         print(flat["name"])
-        for key, value in scores.items():
-            print(f"{key} score: {value}")
+        for criteria, value in breakdown.items():
+            print(f"{criteria}")
+            print(f"score: {value["score"]}")
+            print(f"weight: {value["weight"]}")
+            print(f"contribution: {value["contribution"]}")
         print(f"total score: {total_score}")
 
 main()

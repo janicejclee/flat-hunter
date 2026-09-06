@@ -18,10 +18,16 @@ def test_score_flat():
     max_val = 600
     normalised_weights = {"price": 0.2, "commute": 0.2, "size": 0.2, "bills_included": 0.2, "furnished": 0.2}
 
-    expected_scores = {"price": 7.5, "commute": 7.5, "size": 5, "bills_included": 10, "furnished": 10}
+    expected_breakdown = {
+        "price": {"score": 7.5, "weight": 0.2, "contribution": 1.5}, 
+        "commute": {"score": 7.5, "weight": 0.2, "contribution": 1.5},
+        "size": {"score": 5, "weight": 0.2, "contribution": 1},
+        "bills_included": {"score": 10, "weight": 0.2, "contribution": 2},
+        "furnished": {"score": 10, "weight": 0.2, "contribution": 2} 
+        }
     expected_total_score = 8
 
-    scores, total_score = score_flat(flat, budget_min, budget_max, commute_max, prefer_bills_included, prefer_furnished, min_val, max_val, normalised_weights)
+    breakdown, total_score = score_flat(flat, budget_min, budget_max, commute_max, prefer_bills_included, prefer_furnished, min_val, max_val, normalised_weights)
 
-    assert scores == expected_scores
+    assert breakdown == expected_breakdown
     assert total_score == expected_total_score
